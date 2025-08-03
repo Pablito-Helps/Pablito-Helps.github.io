@@ -1,0 +1,545 @@
+/* Variables CSS */
+:root {
+    --primary-color: #007bff; /* Azul vibrante */
+    --secondary-color: #6c757d; /* Gris */
+    --dark-bg: #1a1a2e; /* Fondo oscuro principal */
+    --light-bg: #272740; /* Fondo más claro para secciones */
+    --text-color: #ffffff; /* Texto blanco */
+    --accent-color: #00f0ff; /* Azul cian para detalles */
+}
+
+/* Base */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+h1, h2, h3, h4 {
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+/* Header */
+.main-header {
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px; /* Ajusta el tamaño del logo */
+    margin-right: 10px;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 1.8em;
+    color: var(--text-color);
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.main-nav ul li {
+    margin-left: 20px;
+}
+
+.main-nav ul li a {
+    color: var(--text-color);
+    font-weight: bold;
+    padding: 5px 0;
+    position: relative;
+}
+
+.main-nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease;
+}
+
+.main-nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero-section {
+    background: url('https://virtualgaminghost.com/images/hero-bg.jpg') no-repeat center center/cover; /* Puedes cambiar esta imagen de fondo */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-color);
+    position: relative;
+    padding-top: 80px; /* Para que el contenido no quede debajo del header fijo */
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6); /* Overlay oscuro */
+}
+
+.hero-section .container {
+    position: relative; /* Para que el contenido esté sobre el overlay */
+    z-index: 1;
+}
+
+.hero-section h2 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* General Sections */
+section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+section:nth-child(even) { /* Para secciones alternas */
+    background-color: var(--light-bg);
+}
+
+section h3 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+section h3::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+/* Features Section */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.feature-item {
+    background-color: var(--light-bg);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilos para los iconos de Font Awesome en las características */
+.feature-item i {
+    font-size: 60px; /* Tamaño de los iconos */
+    color: var(--primary-color); /* Color de los iconos */
+    margin-bottom: 20px;
+    display: block; /* Para que ocupen su propia línea */
+}
+
+.feature-item h4 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* Plans Section */
+.plan-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.plan-card {
+    background-color: var(--light-bg);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    border: 2px solid transparent;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.plan-card.featured {
+    border-color: var(--primary-color);
+    transform: scale(1.05); /* Destacar el plan destacado */
+}
+
+.plan-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.plan-card h4 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: var(--accent-color);
+}
+
+.plan-card .price {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.plan-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.plan-card ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.plan-card ul li:last-child {
+    border-bottom: none;
+}
+
+.plan-card .btn {
+    width: 80%;
+}
+
+/* Contact Section */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    font-size: 1em;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 5px var(--accent-color);
+}
+
+.social-links {
+    margin-top: 30px;
+}
+
+/* Estilos para los iconos de Font Awesome en redes sociales */
+.social-links a {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.social-links i {
+    font-size: 40px; /* Tamaño de los iconos sociales */
+    color: var(--text-color);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links i:hover {
+    color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+/* Footer */
+.main-footer {
+    background-color: #0d0d1e; /* Un color aún más oscuro */
+    color: rgba(255, 255, 255, 0.7);
+    padding: 30px 0;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .main-header .container {
+        flex-direction: column;
+    }
+    .main-nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .main-nav ul li {
+        margin: 0 10px 10px 10px;
+    }
+    .hero-section h2 {
+        font-size: 2.5em;
+    }
+    .hero-section p {
+        font-size: 1em;
+    }
+    section {
+        padding: 60px 0;
+    }
+    section h3 {
+        font-size: 2em;
+    }
+    .feature-grid, .plan-grid {
+        grid-template-columns: 1fr;
+    }
+    .plan-card.featured {
+        transform: scale(1); /* Eliminar el escalado en móviles */
+    }
+}
+
+/* --- Estilos para páginas de Contenido (TOS, Privacidad) --- */
+.content-page {
+    padding-top: 100px; /* Espacio para el header fijo */
+    padding-bottom: 50px;
+    background-color: var(--dark-bg);
+}
+
+.content-page h2 {
+    font-size: 2.8em;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.content-page h3 {
+    font-size: 1.8em;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    color: var(--accent-color);
+    text-align: left;
+}
+
+.content-page p {
+    font-size: 1em;
+    line-height: 1.8;
+    text-align: justify; /* Texto justificado para mejor lectura */
+    margin-bottom: 15px;
+}
+
+.content-page ul {
+    list-style: disc;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.content-page ul li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+/* Ajuste del header y footer para estas páginas si es necesario, 
+   pero con el 'main-header' y 'main-footer' ya debería ser consistente */
+
+/* ip-tools css */
+
+/* --- Estilos para Herramientas IP y DNS --- */
+.ip-detector-section,
+.ip-lookup-section {
+    background-color: var(--light-bg);
+    padding: 40px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center; /* Centrar contenido dentro de la sección */
+}
+
+.ip-detector-section h3,
+.ip-lookup-section h3 {
+    text-align: center; /* Asegurar que el título de la sección esté centrado */
+}
+
+.ip-info-box,
+.lookup-results-box {
+    background-color: var(--dark-bg);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    text-align: left; /* Texto de resultados alineado a la izquierda */
+    border: 1px solid var(--primary-color);
+}
+
+.ip-info-box p,
+.lookup-results-box p {
+    margin-bottom: 8px;
+}
+
+.lookup-form {
+    display: flex;
+    justify-content: center; /* Centrar el input y el botón */
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Permitir que se envuelvan en pantallas pequeñas */
+}
+
+.lookup-form input {
+    flex-grow: 1; /* Permite que el input ocupe el espacio disponible */
+    max-width: 400px; /* Ancho máximo para el input */
+    padding: 12px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    font-size: 1em;
+}
+
+.lookup-form input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.lookup-form input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 5px var(--accent-color);
+}
+
+.lookup-form .btn {
+    padding: 12px 25px; /* Ajuste para que el botón sea consistente */
+}
+
+.lookup-results-box h4 {
+    margin-top: 0;
+    color: var(--accent-color);
+    text-align: left;
+}
+
+.lookup-results-box .error-message,
+.lookup-results-box .initial-message {
+    color: #ff6347; /* Un color de error o advertencia */
+    text-align: center;
+    font-style: italic;
+}
+
+/* Estilos específicos para el iframe si se usa */
+.lookup-results-box iframe {
+    background-color: var(--dark-bg); /* Fondo para que se integre mejor */
+    border-radius: 8px;
+    padding: 5px; /* Pequeño padding alrededor del iframe */
+}
+
+@media (max-width: 600px) {
+    .lookup-form {
+        flex-direction: column;
+        align-items: center;
+    }
+    .lookup-form input {
+        width: 100%;
+        max-width: none;
+    }
+}
